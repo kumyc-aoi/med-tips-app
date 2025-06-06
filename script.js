@@ -1,4 +1,3 @@
-
 function getTipByDate(dateStr) {
   const baseDate = new Date("2025-01-01");
   const targetDate = new Date(dateStr);
@@ -13,9 +12,16 @@ function displayTip(tip) {
   document.getElementById("explanation").textContent = tip.explanation;
 }
 
-const today = new Date();
-document.getElementById("datePicker").valueAsDate = today;
-displayTip(getTipByDate(today.toISOString().split('T')[0]));
+// JSTの今日の日付を "YYYY-MM-DD" 形式で取得
+function getTodayDateStr() {
+  const now = new Date();
+  const jst = new Date(now.getTime() + (9 * 60 * 60 * 1000)); // UTC→JST
+  return jst.toISOString().split('T')[0];
+}
+
+const todayStr = getTodayDateStr();
+document.getElementById("datePicker").value = todayStr;
+displayTip(getTipByDate(todayStr));
 
 document.getElementById("datePicker").addEventListener("change", (e) => {
   const selectedDate = e.target.value;
