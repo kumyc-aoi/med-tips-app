@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>医学生のための1日1つTips</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: auto;
+      background: #fefefe;
+    }
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+    }
+    .tip {
+      margin-top: 2rem;
+      background: #e3f2fd;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    .title {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 2rem;
+    }
+    input[type="date"] {
+      font-size: 1rem;
+      padding: 0.4rem;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>医学生のための1日1つTips</h1>
+  <label for="datePicker">日付を選んで表示：</label>
+  <input type="date" id="datePicker" />
+
+  <div class="tip">
+    <div class="title" id="title"></div>
+    <div id="tip"></div>
+    <hr/>
+    <div id="explanation"></div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
